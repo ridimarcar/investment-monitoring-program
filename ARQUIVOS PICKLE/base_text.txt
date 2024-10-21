@@ -1,0 +1,17 @@
+RELATÓRIO MENSAL {month_interest} {year_interest}
+
+Data:{year_month_interest_end}
+
+
+A rentabilidade de sua carteira neste mês foi de {rentabilidade_carteira}.
+
+Os valores de rentabilidade por mercado são:
+
+Rentabilidade renda fixa: {rentabilidade_renda_fixa} 
+
+Rentabilidade renda variável: {rentabilidade_renda_variavel} 
+
+Rentabilidade fundos de investimentos: {rentabilidade_fundos_investimentos} 
+
+
+

@@ -1,0 +1,446 @@
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 12pt;
+            margin: 0.25in;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-weight: bold;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        .subsection {
+            font-size: 12pt;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+            word-wrap: break-word;
+            table-layout: fixed;
+        }
+
+        th,
+        td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+            overflow-wrap: break-word;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Relatório Mensal</h1>
+    <p>Data do relatório: {{ year_month_interest_end }}</p>
+    <br>
+
+    <h2>Valores dos Investimentos</h2>
+    <img src="{{ image_valores_mensais_reduzido }}" alt="Valores Mensais Reduzido">
+
+    <h2 class="subsection">Valores por mercado</h2>
+    <table>
+        <tr>
+            <th>Tipo de Investimento</th>
+            <th>Valor Bruto</th>
+        </tr>
+        <tr>
+            <td>Renda fixa</td>
+            <td>{{ investimentos_renda_fixa }}</td>
+        </tr>
+        <tr>
+            <td>Renda variável</td>
+            <td>{{ investimentos_renda_variavel }}</td>
+        </tr>
+        <tr>
+            <td>COE</td>
+            <td>{{ investimentos_COE }}</td>
+        </tr>
+        <tr>
+            <td>Fundos de Investimentos</td>
+            <td>{{ investimentos_FI }}</td>
+        </tr>
+    </table>
+
+    <img src="{{ image_mercados_pie_chart }}" alt="Mercados Pie Chart">
+    <div style="page-break-before: always;"></div>
+
+    <h2 class="subsection">Valores por modalidade</h2>
+    <table>
+        <tr>
+            <th>Tipo de Investimento</th>
+            <th>Valor Bruto</th>
+        </tr>
+        <tr>
+            <td>CDB</td>
+            <td>{{ investimentos_cdb }}</td>
+        </tr>
+        <tr>
+            <td>CRA</td>
+            <td>{{ investimentos_cra }}</td>
+        </tr>
+        <tr>
+            <td>Debêntures</td>
+            <td>{{ investimentos_deb }}</td>
+        </tr>
+        <tr>
+            <td>LCA</td>
+            <td>{{ investimentos_lca }}</td>
+        </tr>
+        <tr>
+            <td>LCI</td>
+            <td>{{ investimentos_lci }}</td>
+        </tr>
+        <tr>
+            <td>Fundos de Investimentos</td>
+            <td>{{ investimentos_FI }}</td>
+        </tr>
+        <tr>
+            <td>COE</td>
+            <td>{{ investimentos_COE }}</td>
+        </tr>
+        <tr>
+            <td>Ações</td>
+            <td>{{ investimentos_acoes }}</td>
+        </tr>
+        <tr>
+            <td>Fundos Imobiliários</td>
+            <td>{{ investimentos_fundos_imobiliarios }}</td>
+        </tr>
+        <tr>
+            <td>Carteiras Recomendadas</td>
+            <td>{{ investimentos_carteiras_recomendadas }}</td>
+        </tr>
+    </table>
+
+    <img src="{{ image_modalidades_pie_chart }}" alt="Modalidades Pie Chart">
+
+    <h2 class="subsection">Valores do Patrimônio</h2>
+    <table>
+        <tr>
+            <th>Descrição</th>
+            <th>Valor</th>
+        </tr>
+        <tr>
+            <td>Patrimônio total bruto</td>
+            <td>{{ patrimonio_total_bruto }}</td>
+        </tr>
+        <tr>
+            <td>Patrimônio total líquido</td>
+            <td>{{ patrimonio_total_liquido }}</td>
+        </tr>
+    </table>
+
+    <div style="page-break-before: always;"></div>
+
+    <h2>Movimentações Mensais de Entrada e Saída</h2>
+    <h2 class="subsection">Movimentações por Investimento</h2>
+    <img src="{{ image_movimentacoes_mensais_investimentos }}" alt="Movimentações Mensais Investimento">
+
+    <h2 class="subsection">Movimentações por mercado</h2>
+    <table>
+        <tr>
+            <th>Mercado</th>
+            <th>Entrada</th>
+            <th>Saída</th>
+        </tr>
+        <tr>
+            <td>Renda fixa</td>
+            <td>{{ movimentacoes_entrada_renda_fixa }}</td>
+            <td>{{ movimentacoes_saida_renda_fixa }}</td>
+        </tr>
+        <tr>
+            <td>Renda variável</td>
+            <td>{{ movimentacoes_entrada_renda_variavel }}</td>
+            <td>{{ movimentacoes_saida_renda_variavel }}</td>
+        </tr>
+        <tr>
+            <td>COE</td>
+            <td>{{ movimentacoes_entrada_COE }}</td>
+            <td>{{ movimentacoes_saida_COE }}</td>
+        </tr>
+        <tr>
+            <td>Fundos de Investimentos</td>
+            <td>{{ movimentacoes_entrada_FI }}</td>
+            <td>{{ movimentacoes_saida_FI }}</td>
+        </tr>
+    </table>
+    <br>
+    <h2 class="subsection">Movimentações por modalidade</h2>
+    <table>
+        <tr>
+            <th>Modalidade</th>
+            <th>Entrada</th>
+            <th>Saída</th>
+        </tr>
+        <tr>
+            <td>CRA</td>
+            <td>{{ movimentacoes_entrada_cra }}</td>
+            <td>{{ movimentacoes_saida_cra }}</td>
+        </tr>
+        <tr>
+            <td>Debêntures</td>
+            <td>{{ movimentacoes_entrada_deb }}</td>
+            <td>{{ movimentacoes_saida_deb }}</td>
+        </tr>
+        <tr>
+            <td>LCA</td>
+            <td>{{ movimentacoes_entrada_lca }}</td>
+            <td>{{ movimentacoes_saida_lca }}</td>
+        </tr>
+        <tr>
+            <td>LCI</td>
+            <td>{{ movimentacoes_entrada_lci }}</td>
+            <td>{{ movimentacoes_saida_lci }}</td>
+        </tr>
+        <tr>
+            <td>Fundos de Investimentos</td>
+            <td>{{ movimentacoes_entrada_FI }}</td>
+            <td>{{ movimentacoes_saida_FI }}</td>
+        </tr>
+        <tr>
+            <td>COE</td>
+            <td>{{ movimentacoes_entrada_COE }}</td>
+            <td>{{ movimentacoes_saida_COE }}</td>
+        </tr>
+        <tr>
+            <td>Fundos Imobiliários</td>
+            <td>{{ movimentacoes_entrada_fundos_imobiliarios }}</td>
+            <td>{{ movimentacoes_saida_fundos_imobiliarios }}</td>
+        </tr>
+        <tr>
+            <td>Ações</td>
+            <td>{{ movimentacoes_entrada_acoes }}</td>
+            <td>{{ movimentacoes_saida_acoes }}</td>
+        </tr>
+        <tr>
+            <td>Carteiras Recomendadas</td>
+            <td>{{ movimentacoes_entrada_carteiras_recomendadas }}</td>
+            <td>{{ movimentacoes_saida_carteiras_recomendadas }}</td>
+        </tr>
+    </table>
+    <h2 class="subsection">Total Movimentações</h2>
+    <table>
+        <tr>
+            <th>Descrição</th>
+            <th>Valor</th>
+        </tr>
+        <tr>
+            <td>Movimentação total entrada</td>
+            <td>{{ movimentacao_total_entrada }}</td>
+        </tr>
+        <tr>
+            <td>Movimentação total saída</td>
+            <td>{{ movimentacao_total_saida }}</td>
+        </tr>
+    </table>
+
+    <div style="page-break-before: always;"></div>
+
+    <h2>Rentabilidade e Representatividade</h2>
+
+    <h2 class="subsection">Investimentos</h2>
+    <img src="{{ image_graf_rent_rep_investimentos }}" alt="Gráfico Rent-Rep Investimentos">
+
+    <h2 class="subsection">Mercados</h2>
+    <img src="{{ image_graf_rent_rep_mercados }}" alt="Gráfico Rent-Rep Mercados">
+
+    <h2 class="subsection">Modalidades</h2>
+    <img src="{{ image_graf_rent_rep_mercados }}" alt="Gráfico Rent-Rep Modalidades">
+
+    <h2 class="subsection">Rentabilidade por mercado</h2>
+    <table>
+        <tr>
+            <th>Mercado</th>
+            <th>Rentabilidade Anual Média</th>
+        </tr>
+        <tr>
+            <td>Renda fixa</td>
+            <td>{{ rentabilidade_renda_fixa }}</td>
+        </tr>
+        <tr>
+            <td>Renda variável</td>
+            <td>{{ rentabilidade_renda_variavel }}</td>
+        </tr>
+        <tr>
+            <td>Fundos de Investimentos</td>
+            <td>{{ rentabilidade_fundos_investimento }}</td>
+        </tr>
+        <tr>
+            <td>COE</td>
+            <td>{{ rentabilidade_coe }}</td>
+        </tr>
+    </table>
+
+    <div style="page-break-before: always;"></div>
+
+    <h2 class="subsection">Rentabilidade por modalidade</h2>
+    <table>
+        <tr>
+            <th>Modalidade</th>
+            <th>Rentabilidade Anual Média</th>
+        </tr>
+        <tr>
+            <td>CRA</td>
+            <td>{{ rentabilidade_cra }}</td>
+        </tr>
+        <tr>
+            <td>Debêntures</td>
+            <td>{{ rentabilidade_deb }}</td>
+        </tr>
+        <tr>
+            <td>LCA</td>
+            <td>{{ rentabilidade_lca }}</td>
+        </tr>
+        <tr>
+            <td>LCI</td>
+            <td>{{ rentabilidade_lci }}</td>
+        </tr>
+        <tr>
+            <td>Fundos de Investimentos</td>
+            <td>{{ rentabilidade_FI }}</td>
+        </tr>
+        <tr>
+            <td>COE</td>
+            <td>{{ rentabilidade_COE }}</td>
+        </tr>
+        <tr>
+            <td>Fundos Imobiliários</td>
+            <td>{{ rentabilidade_fundos_imobiliarios }}</td>
+        </tr>
+        <tr>
+            <td>Ações</td>
+            <td>{{ rentabilidade_acoes }}</td>
+        </tr>
+        <tr>
+            <td>Carteiras Recomendadas</td>
+            <td>{{ rentabilidade_carteiras_recomendadas }}</td>
+        </tr>
+    </table>
+    <br>
+    <h2 class="subsection">Rentabilidade da carteira</h2>
+    <p>Rentabilidade mensal da carteira: {{ rentabilidade_carteira }}</p>
+    <br>
+
+    <div style="page-break-before: always;"></div>
+
+    <h2>Variação Patrimonial Mensal</h2>
+    <h2 class="subsection">Variação por Investimentos</h2>
+    <img src="{{ image_evol_patr_invest_table }}" alt="Tabela Variação Patrimonial Investimentos">
+
+    <h2 class="subsection">Variação por Mercados</h2>
+    <table>
+        <tr>
+            <th>Mercado</th>
+            <th>Variação Patrimonial</th>
+        </tr>
+        <tr>
+            <td>Renda fixa</td>
+            <td>{{ evolucao_renda_fixa }}</td>
+        </tr>
+        <tr>
+            <td>Renda variável</td>
+            <td>{{ evolucao_renda_variavel }}</td>
+        </tr>
+        <tr>
+            <td>COE</td>
+            <td>{{ evolucao_COE }}</td>
+        </tr>
+        <tr>
+            <td>Fundos de Investimentos</td>
+            <td>{{ evolucao_FI }}</td>
+        </tr>
+    </table>
+    <br>
+
+    <h2 class="subsection">Variação por Modalidades</h2>
+    <table>
+        <tr>
+            <th>Modalidade</th>
+            <th>Evolução Patrimonial</th>
+        </tr>
+        <tr>
+            <td>CRA</td>
+            <td>{{ evolucao_cra }}</td>
+        </tr>
+        <tr>
+            <td>Debêntures</td>
+            <td>{{ evolucao_deb }}</td>
+        </tr>
+        <tr>
+            <td>LCA</td>
+            <td>{{ evolucao_lca }}</td>
+        </tr>
+        <tr>
+            <td>LCI</td>
+            <td>{{ evolucao_lci }}</td>
+        </tr>
+        <tr>
+            <td>Fundos de Investimentos</td>
+            <td>{{ evolucao_FI }}</td>
+        </tr>
+        <tr>
+            <td>COE</td>
+            <td>{{ evolucao_COE }}</td>
+        </tr>
+        <tr>
+            <td>Fundos Imobiliários</td>
+            <td>{{ evolucao_fundos_imobiliarios }}</td>
+        </tr>
+        <tr>
+            <td>Ações</td>
+            <td>{{ evolucao_acoes }}</td>
+        </tr>
+        <tr>
+            <td>Carteiras Recomendadas</td>
+            <td>{{ evolucao_carteiras_recomendadas }}</td>
+        </tr>
+    </table>
+
+    <br>
+    <h2 class="subsection">Variação Total</h2>
+    <p>Variação patrimonial mensal total: {{ evolucao_total }}</p>
+    
+    <h2>Dados Históricos</h2>
+    <table>
+        <tr>
+            <th>Parâmetro</th>
+            <th>Valor</th>
+        </tr>
+        <tr>
+            <td>Patrimônio bruto médio</td>
+            <td>{{ patrimonio_bruto_medio }}</td>
+        </tr>
+        <tr>
+            <td>Patrimônio líquido médio</td>
+            <td>{{ patrimônio_liquido_medio }}</td>
+        </tr>
+        <tr>
+            <td>Variação patrimonial acumulada</td>
+            <td>{{ evolucao_total_acumulada }}</td>
+        </tr>
+    </table>
+    <img src="{{ image_graf_evol_patrimonial_acumulada }}" alt="Gráfico evolução patrimonial acumulada">
+
+</body>
+
+</html>

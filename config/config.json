@@ -1,0 +1,22 @@
+{
+  "input_mode": "manual",
+  "default_investimentos_action": "Atualizar valores mensais",
+  "selected_year": "2021",
+  "selected_month": "JANEIRO",
+  "mercado": "RENDA FIXA",
+  "modalidade": "LCA",
+  "valor_atual_bruto": [20060.1, 20060.74],
+  "valor_atual_liquido": [20060.1, 20060.74],
+  "year_month_interest_start": "2020-06-01",
+  "year_month_interest_end": "2020-06-30",
+  "filepath_movimentacoes_mensais": "C:\\Users\\ridim\\OneDrive\\FINANCE\\FINANCAS_INVESTIMENTOS\\ARQUIVOS PICKLE\\movimentacoes_mensais_2020.pickle",
+  "filepath_valores_mensais": "C:\\Users\\ridim\\OneDrive\\FINANCE\\FINANCAS_INVESTIMENTOS\\ARQUIVOS PICKLE\\valores_mensais_2020.pickle",
+  "pergunta1": "n",
+  "pergunta2": "s",
+  "pergunta3": "s",
+  "pergunta4": "s",
+  "pergunta5": "n",
+  "pergunta6": "s",
+  "pergunta7": "s",
+  "pergunta8": "s"
+}
